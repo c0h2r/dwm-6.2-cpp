@@ -7,7 +7,3 @@
 //void die(const char *fmt, ...);
 void die(const char *fmt);
 void *ecalloc(size_t nmemb, size_t size);
-int normalizepath(const char *path, char **normal);
-int parentdir(const char *path, char **parent);
-int mkdirp(const char *path);
-int nullterminate(char **str, size_t *len);

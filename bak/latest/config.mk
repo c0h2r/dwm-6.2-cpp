@@ -20,28 +20,23 @@ FREETYPEINC = /usr/include/freetype2
 # OpenBSD (uncomment)
 #FREETYPEINC = ${X11INC}/freetype2
 
-# yajl
-YAJLLIBS = -lyajl
-YAJLINC = /usr/include/yajl
-
 # includes and libs
-INCS = -I${X11INC} -I${FREETYPEINC} -I${YAJLINC}
+INCS = -I${X11INC} -I${FREETYPEINC}
 #${XINERAMALIBS}
-LIBS = -L${X11LIB} -lX11 ${FREETYPELIBS} ${YAJLLIBS} -lfmt
+LIBS = -L${X11LIB} -lX11 ${FREETYPELIBS}
 
 # flags
 #${XINERAMAFLAGS}
 CPPFLAGS = -D_DEFAULT_SOURCE -D_BSD_SOURCE -D_POSIX_C_SOURCE=200809L -DVERSION=\"${VERSION}\" 
 #CFLAGS   = -g -std=c99 -pedantic -Wall -O0 ${INCS} ${CPPFLAGS}
-CFLAGS   = -std=c++20 -pedantic -Wall -Wno-deprecated-declarations -Os ${INCS} ${CPPFLAGS}
+CFLAGS   = -std=c99 -pedantic -Wall -Wno-deprecated-declarations -Os ${INCS} ${CPPFLAGS}
 CPPFLAGS += -D_DEFAULT_SOURCE 
-CXXFLAGS =  -std=c++20
+CXXFLAGS =  -std=c++11
 CXXFLAGS += -pedantic
 CXXFLAGS += -Wall -Wextra
 CXXFLAGS += -Wno-deprecated-declarations
 CXXFLAGS += -Wno-unused-parameter
 CXXFLAGS += -g -O0 -Os ${INCS} ${CPPFLAGS}
-CXXFLAGS += -fpermissive
 LDFLAGS  = ${LIBS}
 
 # Solaris
